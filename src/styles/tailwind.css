@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-5xl font-extrabold text-center my-4 bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text;
+    }
+
+    h2 {
+        @apply text-3xl font-medium text-center my-4;
+    }
+
+    a {
+        @apply text-blue-500 underline decoration-2 underline-offset-2;
+    }
+
+    p {
+        @apply my-4 text-lg;
+    }
+}

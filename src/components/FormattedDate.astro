@@ -1,0 +1,18 @@
+---
+interface Props {
+    date: Date;
+}
+
+const { date } = Astro.props as Props;
+
+const dateOptions: Intl.DateTimeFormatOptions = {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+};
+---
+
+<p class="text-sm text-zinc-300">
+    Published{' '}
+    {date.toLocaleString('en-US', dateOptions)}
+</p>

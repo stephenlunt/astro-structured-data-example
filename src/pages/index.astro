@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+
+import FormattedDate from '@components/FormattedDate.astro';
+import WebsiteStructuredData from '@components/WebsiteStructuredData.astro';
+import Layout from '@layouts/Layout.astro';
+
+const blogPosts = (await getCollection('blog')).sort(
+    (a, b) => b.data.createdAt.valueOf() - a.data.createdAt.valueOf()
+);
+---
+
+<Layout title="Home" description="Example Astro site using structured data.">
+    <WebsiteStructuredData slot="structured-data" />
+
+    <h1>Welcome to Astro</h1>
+    <h2>Structured Data Example</h2>
+    <ul class="list-none my-8">
+        {
+            blogPosts.map((post) => (
+                <li class="bg-zinc-800/30 border border-zinc-700 rounded-md p-4">
+                    <a href={`/blog/${post.slug}`} class="text-2xl font-medium">
+                        {post.data.title}
+                    </a>
+                    <p>{post.data.description}</p>
+                    <FormattedDate date={post.data.createdAt} />
+                </li>
+            ))
+        }
+    </ul>
+</Layout>

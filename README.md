@@ -1,4 +1,12 @@
-# Astro Starter Kit: Basics
+# Astro Structured Data Example
+
+This is an example repository that showcases how structured data in JSON+LD format can easily be integrated into websites using the Astro framework.
+
+It is based on the basic Astro template and integrates content collections to create a simple blog site.
+
+Read the [full tutorial here on my blog](http://stephen-lunt.dev/blog/astro-structured-data/).
+
+## Astro Starter Kit: Basics
 
 ```sh
 npm create astro@latest -- --template basics
